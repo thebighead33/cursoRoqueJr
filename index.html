@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" xml:lang="pt-br">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Meu Portfólio</title>
+
+<link rel="stylesheet" type="text/css" href="css/screen.css">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+	$(
+		function(){
+			
+			// $('a').off('click');
+
+			// $('a').on('click', function(e){
+			// 	var test = $(this).attr('href');
+			// 	$('#middle div').css('display','none');
+			// 	$(test).css('display','block');
+			// 	e.preventDefault();
+			// })
+
+			$('a').off('click');
+			$('a').on('click', function (e) {
+				//var test = $(this).attr('href');
+				// switch (test){
+				// 	case '#home':
+				// 		$('img').attr('src','img/painelhome/1.png');
+				// 		break;
+				// 	case '#portifolio':
+				// 		$('img').attr('src','img/painelhome/2.png');
+				// 		break;
+				// 	case '#contato':
+				// 		$('img').attr('src','img/painelhome/3.png');
+				// }
+				var img = $(this).attr('img');
+				$('img').attr('src', 'img/painelhome/'+img+'.png');
+			})
+
+		}
+	);
+
+</script>
+</head>
+<body>
+
+<div id="container">
+	<div id="header">
+		<h1>Portfolio</h1>
+		<ul id="nav">
+			<li><a href="#home" img="1">Home</a></li>
+			<li><a href="#portifolio" img="2">Portfólio</a></li>
+			<li><a href="#contato" img="3">Contato</a></li>
+		</ul>
+	</div>
+	<div id="middle">
+			<img src="img/painelhome/1.png">
+		<!-- <div id="home">
+			<img src="img/painelhome/1.png" >
+		</div>
+		<div id="portifolio" class="hidden" >
+			<img src="img/painelhome/2.png">
+		</div>
+		<div id="contato" class="hidden" >
+			<img src="img/painelhome/3.png">
+		</div> -->
+	</div>
+	<div id="footer"></div>
+
+</div>
+</body>
+</html>

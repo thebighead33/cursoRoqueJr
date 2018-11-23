@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)http://roquejunior.com/bisa/curso/javascript/desafio/ -->
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	<title>Calculadora</title>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+	<script
+	  src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js">
+	</script>
+
+</head>
+<body>
+	<fieldset>
+		<div class="container">
+			<div class="col-md-2">
+				<legend>Calculadora</legend>
+
+				<input type="text" class="form-control" name="visor" id="visor">
+
+				<table id="calc">
+					<tbody><tr>
+						<td><button type="button" name="num9" class="num btn btn-default" value="9">9</button></td>
+						<td><button type="button" name="num8" class="num btn btn-default" value="8">8</button></td>
+						<td><button type="button" name="num7" class="num btn btn-default" value="7">7</button></td>
+						<td><button type="button" name="somar" class="oper btn btn-default" value="+">+</button></td>
+					</tr>
+					<tr>
+						<td><button type="button" name="num6" class="num btn btn-default" value="6">6</button></td>
+						<td><button type="button" name="num5" class="num btn btn-default" value="5">5</button></td>
+						<td><button type="button" name="num4" class="num btn btn-default" value="4">4</button></td>
+						<td><button type="button" name="subtrair" class="oper btn btn-default" value="-">-</button></td>
+					</tr>
+					<tr>
+						<td><button type="button" name="num3" class="num btn btn-default" value="3">3</button></td>
+						<td><button type="button" name="num2" class="num btn btn-default" value="2">2</button></td>
+						<td><button type="button" name="num1" class="num btn btn-default" value="1">1</button></td>
+						<td><button type="button" name="multiplicar" class="oper btn btn-default" value="*">x</button></td>
+					</tr>
+					<tr>
+						<td><button type="button" name="num0" class="num btn btn-default" value="0">0</button></td>
+						<td><button type="button" name="igual" class="num btn btn-default" onclick="calcular()">=</button></td>
+						<td><button type="button" name="limpar" class="num btn btn-default" onclick="calcLimpar()">AC</button></td>
+						<td><button type="button" name="dividir" class="oper btn btn-default" value="/">/</button></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+	</fieldset>
+
+	<script type="text/javascript">
+
+		var op = '',
+			result = 0;
+
+		function calcLimpar(){
+			op = '';
+		}
+
+		function calcular(){
+			result = eval(op);
+		}
+		
+		$(
+		function(){
+
+			$('button').off('click');
+			$('button').on('click', function(e){
+				op += ''+$(this).val(); 
+				$('#visor').val(op); 
+			});
+
+			$('button[name="igual"]').off();
+			$('button[name="igual"]').on('click', function(e){
+				calcLimpar();
+				$('#visor').val(result);
+			});
+		}
+	);
+	</script>
+
+</body>
+</html>
